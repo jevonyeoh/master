@@ -1,11 +1,11 @@
 Plusdollar::Application.routes.draw do
   resources :users
 
+  root :to "users#index"
+
   resources :attendances
 
   resources :posts
-
-  root to: "users#index"
   resources :pledges
 
   # The priority is based upon order of creation:
