@@ -1,7 +1,7 @@
 Plusdollar::Application.routes.draw do
   resources :users
 
-  root :to "users#index"
+  root to: "users#index"
 
   resources :attendances
 
