@@ -1,7 +1,12 @@
 Plusdollar::Application.routes.draw do
-  resources :users
+  resources :sexes
 
-  root to: "users#index"
+  resources :genders
+
+  resources :newusers
+
+  root :to => "newusers#index"
+  resources :users
 
   resources :attendances
 
