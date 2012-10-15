@@ -37,6 +37,7 @@
     <%= f.label :gender, class: 'control-label' %>
     <div class="controls">
     	<%= f.collection_select :gender, Sex.all, :gender, :gender  %>
+    	<%= link_to "Other", new_sex_path, class: "btn btn-primary" %>
     </div>    	
   </div>
   
