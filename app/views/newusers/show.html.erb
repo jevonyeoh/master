@@ -6,6 +6,16 @@
 </p>
 
 <p>
+  <b>Username:</b>
+  <%= @newuser.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @newuser.password %>
+</p>
+
+<p>
   <b>Year:</b>
   <%= @newuser.year %>
 </p>
@@ -27,4 +37,4 @@
 
 
 <%= link_to 'Edit', edit_newuser_path(@newuser) %> |
-<%= link_to 'Back', newusers_path %>
+<%= link_to 'Back', "http://jevonyeoh.herokuapp.com" %>

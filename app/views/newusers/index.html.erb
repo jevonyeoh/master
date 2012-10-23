@@ -3,6 +3,8 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Username</th>
+    <th>Password</th>
     <th>Graduating Year</th>
     <th>Email</th>
     <th>Gender</th>
@@ -15,6 +17,8 @@
 <% @newusers.each do |newuser| %>
   <tr>
     <td><%= newuser.name %></td>
+    <td><%= newuser.username %></td>
+    <td><%= newuser.password %></td>
     <td><%= newuser.year %></td>
     <td><%= newuser.email %></td>
     <td><%= newuser.gender %></td>
