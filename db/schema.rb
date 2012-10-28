@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121023033940) do
+ActiveRecord::Schema.define(:version => 20121028021105) do
 
   create_table "attendances", :force => true do |t|
     t.string   "date"
@@ -22,21 +22,21 @@ ActiveRecord::Schema.define(:version => 20121023033940) do
   end
 
   create_table "genders", :force => true do |t|
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "maleorfemale"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "newusers", :force => true do |t|
     t.string   "name"
     t.decimal  "year"
-    t.string   "email"
     t.string   "gender"
     t.string   "major"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "username"
     t.string   "password"
+    t.string   "email"
   end
 
   create_table "pledges", :force => true do |t|
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(:version => 20121023033940) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
   create_table "sexes", :force => true do |t|
     t.string   "gender"
     t.datetime "created_at", :null => false
@@ -63,10 +76,22 @@ ActiveRecord::Schema.define(:version => 20121023033940) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.string   "email"
     t.string   "year"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

@@ -1,3 +1,3 @@
 class Gender < ActiveRecord::Base
-  attr_accessible :type
+  attr_accessible :maleorfemale
 end

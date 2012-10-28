@@ -10,7 +10,7 @@
 
 <% @genders.each do |gender| %>
   <tr>
-    <td><%= gender.type %></td>
+    <td><%= gender.maleorfemale %></td>
     <td><%= link_to 'Show', gender %></td>
     <td><%= link_to 'Edit', edit_gender_path(gender) %></td>
     <td><%= link_to 'Destroy', gender, confirm: 'Are you sure?', method: :delete %></td>
