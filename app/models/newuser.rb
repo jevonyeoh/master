@@ -10,4 +10,7 @@ class Newuser < ActiveRecord::Base
     :message => " must be alpha-numeric and contain at least one number" }
   validates :email, uniqueness: true
     
+  scope :class_of_2015, where('year < ?', 2015.0)
+ 
+    
 end

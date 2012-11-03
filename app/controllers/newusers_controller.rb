@@ -2,7 +2,7 @@ class NewusersController < ApplicationController
   # GET /newusers
   # GET /newusers.json
   def index
-    @newusers = Newuser.all
+    @newusers = Newuser.class_of_2015
 
     respond_to do |format|
       format.html # index.html.erb
