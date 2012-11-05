@@ -23,9 +23,6 @@
     <th>Email</th>
     <th>Gender</th>
     <th>Major</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @newusers.each do |newuser| %>
@@ -37,9 +34,11 @@
     <td><%= newuser.email %></td>
     <td><%= newuser.gender %></td>
     <td><%= newuser.major %></td>
-    <td><%= link_to 'Show', newuser %></td>
-    <td><%= link_to 'Edit', edit_newuser_path(newuser) %></td>
+    <% if false %>
+    <td><%= link_to 'Show', newuser %></td> 
+    <td><%= link_to 'Edit', edit_newuser_path(newuser) %></td> 
     <td><%= link_to 'Destroy', newuser, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %> 
   </tr>
 <% end %>
 </table>
