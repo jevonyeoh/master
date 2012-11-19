@@ -22,10 +22,10 @@
 
 	$('#hideshow').toggle(function() {
 		$('#hideshow').text('Show');
-		$('#message').hide();
+		$('#message').fadeOut();
 	}, function() {
 		$('#hideshow').text('Hide');
-		$('#message').show();
+		$('#message').fadeIn();
 	});
 
 
