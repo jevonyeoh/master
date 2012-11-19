@@ -18,7 +18,16 @@
  * ========================================================== */
 
 
-!function ($) {
+!function ($) {	
+
+	$('#hideshow').toggle(function() {
+		$('#hideshow').text('Show');
+		$('#message').hide();
+	}, function() {
+		$('#hideshow').text('Hide');
+		$('#message').show();
+	});
+
 
   $(function () {
 
